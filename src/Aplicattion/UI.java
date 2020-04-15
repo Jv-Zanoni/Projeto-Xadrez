@@ -69,16 +69,11 @@ public class UI {
 		}
 		System.out.println(ANSI_RED + "  A B C D E F G H" + ANSI_RESET);
 	}
-	
+
 	private static void printPiece(ChessPiece piece, boolean background) {
 		if (background) {
-			Position position = null;
-			if(piece.isThereOpponentPiece(position)) {
-				System.out.print(ANSI_RED_BACKGROUND);
-			}else {
 				System.out.print(ANSI_BLUE_BACKGROUND);
 			}
-		}
     	if (piece == null) {
             System.out.print("-" + ANSI_RESET);
         }
