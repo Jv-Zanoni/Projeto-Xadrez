@@ -3,6 +3,7 @@ package Aplicattion;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import boardgame.Position;
 import chess.ChessPiece;
 import chess.ChessPosition;
 import chess.Color;
@@ -71,7 +72,12 @@ public class UI {
 	
 	private static void printPiece(ChessPiece piece, boolean background) {
 		if (background) {
-			System.out.print(ANSI_RED_BACKGROUND);
+			Position position = null;
+			if(piece.isThereOpponentPiece(position)) {
+				System.out.print(ANSI_RED_BACKGROUND);
+			}else {
+				System.out.print(ANSI_BLUE_BACKGROUND);
+			}
 		}
     	if (piece == null) {
             System.out.print("-" + ANSI_RESET);
